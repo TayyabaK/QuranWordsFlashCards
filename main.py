@@ -6,11 +6,11 @@ from collections import namedtuple
 
 Word = namedtuple("Word","Arabic English")
 
-file = open("data/unknown_words.json","r")
+file = open("unknown_words.json","r")
 unknown_words= json.load(file)
 
 try:
-    file = open("data/known_words.json","r")
+    file = open("known_words.json","r")
     known_words = json.load(file)
 except:
     known_words = {}
@@ -58,10 +58,10 @@ def btn_right_click():
     show_card()
 
 def save_files():
-    file = open("data/unknown_words.json", "w")
+    file = open("unknown_words.json", "w")
     json.dump(unknown_words, file)
 
-    file = open("data/known_words.json", "w")
+    file = open("known_words.json", "w")
     json.dump(known_words, file)
 
 
